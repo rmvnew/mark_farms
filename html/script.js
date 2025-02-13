@@ -3,7 +3,7 @@ window.addEventListener('message', function (event) {
 
     var data = event.data;
     if (data.action === "showUI") {
-        showFarmMenu(data.routes);
+        showFarmMenu(data.routes,data.coords);
     } else if (data.action === "hideUI") {
 
         hideFarmMenu();
@@ -44,7 +44,8 @@ $(document).keyup((event)=>{
 //     menu.style.display = "block";
 // }
 
-function showFarmMenu(routes) {
+function showFarmMenu(routes,coords) {
+
     var menu = document.getElementById("farmMenu");
     var routeList = document.getElementById("routeList");
     routeList.innerHTML = "";
@@ -57,7 +58,7 @@ function showFarmMenu(routes) {
         var li = document.createElement("li");
         li.textContent = key;
         li.onclick = function () {
-            selectRoute(key);
+            selectRoute({key,coords});
         };
         routeList.appendChild(li);
     });
@@ -74,15 +75,19 @@ function hideFarmMenu() {
 }
 
 function selectRoute(routeName) {
-    fetch(`https://${GetParentResourceName()}/selectRoute`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ routeName: routeName })
-    }).then(resp => resp.json()).then(resp => {
-        console.log(resp);
-    });
+
+
+    // fetch(`https://${GetParentResourceName()}/selectRoute`, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ routeName: routeName })
+    // }).then(resp => resp.json()).then(resp => {
+    //     console.log(resp);
+    // });
+
+    sendDataToClient("selectRoute",routeName)
 }
 
 document.getElementById("closeBtn").addEventListener("click", function () {
