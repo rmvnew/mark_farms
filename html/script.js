@@ -21,28 +21,6 @@ $(document).keyup((event)=>{
 })
 
 
-// function showFarmMenu(routes) {
-
-//     var menu = document.getElementById("farmMenu");
-//     var routeList = document.getElementById("routeList");
-//     routeList.innerHTML = "";
-
-    
-//     for (var key in routes) {
-//         if (routes.hasOwnProperty(key)) {
-
-//             var li = document.createElement("li");
-//             li.textContent = key;
-//             li.onclick = function () {
-//                 var selectedRoute = this.textContent;
-//                 selectRoute(selectedRoute);
-//             };
-//             routeList.appendChild(li);
-
-//         }
-//     }
-//     menu.style.display = "block";
-// }
 
 function showFarmMenu(routes,coords) {
 
@@ -75,17 +53,6 @@ function hideFarmMenu() {
 }
 
 function selectRoute(routeName) {
-
-
-    // fetch(`https://${GetParentResourceName()}/selectRoute`, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ routeName: routeName })
-    // }).then(resp => resp.json()).then(resp => {
-    //     console.log(resp);
-    // });
 
     sendDataToClient("selectRoute",routeName)
 }
