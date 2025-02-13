@@ -3,6 +3,9 @@ print("Config carregado no client:", Config and "OK" or "NÃO CARREGADO")
 local markers = {}
 local isNearMarker = false
 
+MYROUTES = nil
+MYCOODS = nil
+
 -- Criar markers para cada organização
 Citizen.CreateThread(function()
     while not Config do
@@ -39,11 +42,16 @@ Citizen.CreateThread(function()
                     ShowHelpText("Pressione ~INPUT_CONTEXT~ para iniciar o farm de " .. marker.name)
                     
                     if IsControlJustPressed(0, 38) then -- Tecla "E"
-                        SetNuiFocus(true, true)
-                        -- SendNUIMessage({ action = "showUI", routes = Config.farm.routes })
-                        SendNUIMessage({ action = "showUI", routes = Config.farm.routes,coords = {marker.coords.x, marker.coords.y, marker.coords.z} })
-                        -- TriggerEvent('farm:blipClicked', marker.coords.x, marker.coords.y, marker.coords.z)
+                        -- SetNuiFocus(true, true)
+                        -- -- SendNUIMessage({ action = "showUI", routes = Config.farm.routes })
+                        -- SendNUIMessage({ action = "showUI", routes = Config.farm.routes,coords = {marker.coords.x, marker.coords.y, marker.coords.z} })
+                        -- -- TriggerEvent('farm:blipClicked', marker.coords.x, marker.coords.y, marker.coords.z)
 
+                       local perm = getOrgPermission(marker.coords)
+                       MYROUTES = Config.farm.routes 
+                       MYCOODS = {marker.coords.x, marker.coords.y, marker.coords.z} 
+                       
+                       TriggerServerEvent("farm:hasPermission",perm)
                     end
                 end
             end
@@ -54,6 +62,18 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+function getOrgPermission(coords)
+    for orgType, data in pairs(Config.farm.orgType) do
+        for _, org in ipairs(data.orgs) do
+            if org.coords.x == coords.x and org.coords.y == coords.y and org.coords.z == coords.z then
+                return org.permission -- Retorna a permissão da organização
+            end
+        end
+    end
+    return nil -- Retorna nil se nenhuma permissão for encontrada
+end
+
 
 -- Exibir texto de ajuda na tela
 function ShowHelpText(text)
@@ -71,7 +91,29 @@ RegisterNUICallback("closeCurrentNUI",function(data,cb)
 end)
 
 
+RegisterNetEvent("farm:success")
+AddEventHandler("farm:success",function ()
+    TriggerEvent("Notify","sucesso","Você coletou o farm!")
+    PlaySoundFrontend(-1, "PICK_UP", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
+end)
 
+
+RegisterNetEvent("farm:autorized")
+AddEventHandler("farm:autorized",function ()
+
+
+
+    print("Aceitoooooooooooo",json.encode(MYROUTES),json.encode(MYCOODS))
+    SetNuiFocus(true, true)
+    SendNUIMessage({ action = "showUI", routes = MYROUTES, coords = MYCOODS })
+end)
+
+
+RegisterNetEvent("farm:notAutorized")
+AddEventHandler("farm:notAutorized",function ()
+     TriggerEvent("Notify","negado","Você não tem autorização para acessar esse blip!")
+     PlaySoundFrontend(-1, "ERROR", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
+end)
 
 
 RegisterNUICallback('selectRoute', function(data, cb)

@@ -6,42 +6,25 @@ vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP")
 CURRENT_TYPE = nil
 -- service.lua
-print("Config carregado no server:", Config and "OK" or "NÃO CARREGADO")
 
 
--- Função dummy para checar permissão
-function hasPermission(source, permission)
-    -- Substitua por sua lógica real (ex.: utilizando exports ou funções do framework)
-    return true
-end
 
-RegisterNetEvent('farm:start')
-AddEventHandler('farm:start', function(routeName)
-    local _source = source
-    print("Evento farm:start recebido do player: " .. _source .. " para a rota: " .. routeName)
-    local Config = require("config_default").Config
 
-    local permitido = false
-    -- Percorre as facções definidas para ver se o jogador tem a permissão
-    for _, data in pairs(Config.farm.orgType) do
-        for _, org in ipairs(data.orgs) do
-            if hasPermission(_source, org.permission) then
-                permitido = true
-                break
-            end
-        end
-        if permitido then break end
+RegisterNetEvent('farm:hasPermission')
+AddEventHandler('farm:hasPermission', function(perm)
+    
+    local source = source 
+    local user_id = vRP.getUserId(source)
+
+    if vRP.hasPermission(user_id,perm) then
+        TriggerClientEvent("farm:autorized",source)
+    else
+        TriggerClientEvent("farm:notAutorized",source)
     end
+    
 
-    if not permitido then
-        TriggerClientEvent('chat:addMessage', _source, { args = { '^1Farm', 'Você não possui permissão para iniciar essa rota.' } })
-        print("Permissão negada para o player: " .. _source)
-        return
-    end
-
-    print("Permissão concedida para o player: " .. _source)
-    TriggerClientEvent('farm:startAllowed', _source, routeName)
 end)
+
 
 RegisterNetEvent('farm:complete')
 AddEventHandler('farm:complete', function(routeName)
@@ -76,4 +59,7 @@ AddEventHandler('farm:giveItem', function(itensFarm)
 
 
     end
+
+    TriggerClientEvent("farm:success",source)
+
 end)
