@@ -3,17 +3,17 @@ game 'gta5'
 
 shared_scripts {
     '@vrp/lib/utils.lua',
-    'lib/**',
+    'lib/tunel.lua',
     'config_default.lua'
 }
 
 client_scripts {
-    'tunnel.lua', -- Adiciona o túnel antes do client.lua
+    
     'client.lua',
 }
 
 server_scripts {
-    'tunnel.lua', -- Adiciona o túnel antes do service.lua
+   
     'service.lua',
 }
 

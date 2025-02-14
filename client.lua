@@ -251,6 +251,17 @@ function drawTxt(text, x, y)
     DrawText(x, y)
 end
 
+
+
+RegisterNetEvent("farm:bagfull")
+AddEventHandler("farm:bagfull",function ()
+
+    TriggerEvent("Notify", "negado", "Você não tem espaço suficiente para coletar mais itens!")
+    PlaySoundFrontend(-1, "ERROR", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
+
+end)
+
+
 RegisterNetEvent("farm:success")
 AddEventHandler("farm:success",function ()
     TriggerEvent("Notify","sucesso","Você coletou o farm!")
