@@ -192,47 +192,47 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Mafia',
-                        coords = { x = 412.05, y = 3.7, z = 84.92},
+                        coords = { x = 412.33, y = 7.76, z = 84.92},
                         permission = 'perm.mafia',
                     },
                     {
                         name = 'Cartel',
-                        coords = { x = 1396.7, y = 1160.48, z = 114.33},
+                        coords = { x = 1399.98, y = 1139.68, z = 114.33},
                         permission = 'perm.cartel',
                     },
                     {
                         name = 'Croacia',
-                        coords = { x = -1486.33, y = 835.81, z = 176.99},
+                        coords = { x = -1513.49, y = 844.86, z = 181.59},
                         permission = 'perm.croacia',
                     },
                     {
                         name = 'Yakuza',
-                        coords = { x = -897.57, y = -1443.89, z = 9.82},
+                        coords = { x = -882.05, y = -1451.41, z = 5.43},
                         permission = 'perm.yakuza',
                     },
                     {
                         name = 'Triade',
-                        coords = { x = -1866.1,y = 2061.25, z = 135.44},
+                        coords = { x = -1890.85, y = 2058.35, z = 140.98},
                         permission = 'perm.triade',
                     },
                     {
                         name = 'Merlim',
-                        coords = { x = -873.96, y = 2655.58, z = 58.27},
+                        coords = { x = -859.56, y = 2642.75, z = 58.3},
                         permission = 'perm.merlim',
                     },
                     {
                         name = 'BlackOut',
-                        coords = { x = 2031.38, y = 21.14, z = 203.44},
+                        coords = { x = 2031.37, y = 24.84, z = 203.44},
                         permission = 'perm.blackOut',
                     },
                     {
                         name = 'Wolves',
-                        coords = { x = 767.54, y = -244.91, z = 69.83},
+                        coords = { x = 766.03, y = -250.25, z = 69.83},
                         permission = 'perm.wolves',
                     },
                     {
                         name = 'Franca',
-                        coords = { x = -2411.3, y = 1770.16, z = 187.67},
+                        coords = { x = -2425.54, y = 1787.31, z = 187.23},
                         permission = 'perm.franca',
                     },
                 }
@@ -246,37 +246,37 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Grota',
-                        coords = { x = 1311.71, y = -198.69, z = 120.93},
+                        coords = { x = 1313.98, y = -177.81, z = 108.45},
                         permission = 'perm.grota',
                     },
                     {
                         name = 'Milicia',
-                        coords = { x = 1066.69, y = 1026.19, z = 250.78},
+                        coords = { x = 1073.57, y = 999.3, z = 250.42},
                         permission = 'perm.milicia',
                     },
                     {
                         name = 'Alemao',
-                        coords = { x = 406.19, y = 743.07, z = 194.77},
+                        coords = { x = 388.04, y = 792.39, z = 190.4},
                         permission = 'perm.alemao',
                     },
                     {
                         name = 'Helipa',
-                        coords = { x = 1436.79, y = 1851.37, z = 111.71},
+                        coords = { x = 1447.64, y = 1859.03, z = 111.82},
                         permission = 'perm.helipa',
                     },
                     {
                         name = 'Crips',
-                        coords = { x = 1381.61, y = -2358.48, z = 61.75},
+                        coords = { x = 1380.59, y = -2343.32, z = 62.01},
                         permission = 'perm.crips',
                     },
                     {
                         name = 'Canada',
-                        coords = { x = -136.56, y = -1610.79, z = 35.03},
+                        coords = { x = -144.81, y = -1599.9, z = 35.06},
                         permission = 'perm.canada',
                     },
                     {
                         name = 'Turquia',
-                        coords = { x = 1320.04, y = -756.01, z = 71.83},
+                        coords = { x = 1361.66, y = -753.37, z = 67.33},
                         permission = 'perm.turquia',
                     },
                 }
@@ -290,17 +290,17 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'MotoClub',
-                        coords = { x = 978.78, y = -92.14, z = 74.85},
+                        coords = { x = 998.6, y = -123.9, z = 74.05},
                         permission = 'perm.motoClub',
                     },
                     {
                         name = 'Furious',
-                        coords = { x = -323.64, y = -129.42, z = 39.01},
+                        coords = { x = -345.45, y = -130.93, z = 39.01},
                         permission = 'perm.furious',
                     },
                     {
                         name = 'Lacoste',
-                        coords = { x = -227.84, y = -1327.29, z = 30.89},
+                        coords = { x = -205.55, y = -1333.16, z = 30.89},
                         permission = 'perm.lacoste',
                     },
                 }
@@ -314,7 +314,7 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'ThunderCustom',
-                        coords = { x = 938.96, y = -1055.09, z = 40.84},
+                        coords = { x = 936.9, y = -1048.93, z = 40.84},
                         permission = 'perm.mecanica',
                     },
                     
@@ -328,7 +328,7 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Hospital',
-                        coords = { x = -438.15, y = -307.89, z = 34.91},
+                        coords = { x = -434.53, y = -314.24, z = 34.91},
                         permission = 'perm.unizk',
                     },
                     
@@ -342,7 +342,7 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Portugal',
-                        coords = { x = 1871.61, y = 6411.28, z = 47.31},
+                        coords = { x = 1870.92, y = 6406.34, z = 47.31},
                         permission = 'perm.portugal',
                     },
                     
@@ -356,7 +356,7 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Argentina',
-                        coords = { x = 336.31, y = -2015.06, z = 22.39},
+                        coords = { x = 341.57, y = -2024.21, z = 22.39},
                         permission = 'perm.argentina',
                     },
                     
@@ -370,7 +370,7 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Brasil',
-                        coords = { x = -1618.85, y = 4731.91, z = 53.68},
+                        coords = { x = -1633.66, y = 4750.57, z = 53.68},
                         permission = 'perm.brasil',
                     },
                     
@@ -386,27 +386,27 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Cv',
-                        coords = { x = 3264.66, y = 5104.16, z = 24.04},
+                        coords = { x = 3313.13, y = 5135.93, z = 19.34},
                         permission = 'perm.cv',
                     },
                     {
                         name = 'Camorra',
-                        coords = { x = -802.66, y = 168.82, z = 72.82},
+                        coords = { x = -803.19, y = 185.89, z = 72.61},
                         permission = 'perm.camorra',
                     },
                     {
                         name = 'Mexico',
-                        coords = { x = 2286.94, y = 2306.58, z = 72.47},
+                        coords = { x = 2290.49, y = 2280.43, z = 72.12},
                         permission = 'perm.mexico',
                     },
                     {
                         name = 'Jamaica',
-                        coords = { x = -525.16, y = 2992.71, z = 27.57},
+                        coords = { x = -516.61, y = 2998.62, z = 27.53},
                         permission = 'perm.Jamaica',
                     },
                     {
                         name = 'Australia',
-                        coords = { x = 862.13, y = 2855.0, z = 60.15},
+                        coords = { x = 847.65, y = 2846.93, z = 60.04},
                         permission = 'perm.australia',
                     },
                     
@@ -421,27 +421,27 @@ Config.farm = {
                 orgs = {
                     {
                         name = 'Tequila',
-                        coords = { x = -571.66, y = 289.06, z = 79.18},
+                        coords = { x = -567.34, y = 309.1, z = 84.55},
                         permission = 'perm.tequila',
                     },
                     {
                         name = 'Bahamas',
-                        coords = { x = -1392.5, y = -583.76, z = 30.23},
+                        coords = { x = -1387.29, y = -614.36, z = 30.31},
                         permission = 'perm.bahamas',
                     },
                     {
                         name = 'Iluminatis',
-                        coords = { x = -2993.47, y = 56.0, z = 7.95},
+                        coords = { x = -3015.67, y = 55.82, z = 11.95},
                         permission = 'perm.iluminatis',
                     },
                     {
                         name = 'Cassino',
-                        coords = { x = 963.31, y = 23.98, z = 77.09},
+                        coords = { x = 965.27, y = 54.47, z = 74.98},
                         permission = 'perm.cassino',
                     },
                     {
                         name = 'Luxury',
-                        coords = { x = -303.11, y = 217.86, z = 79.48},
+                        coords = { x = -288.01, y = 232.13, z = 78.82},
                         permission = 'perm.luxury',
                     },
                    
