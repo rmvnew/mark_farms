@@ -41,31 +41,7 @@ AddEventHandler('farm:cancel', function(routeName)
 end)
 
 
--- RegisterServerEvent('farm:giveItem')
--- AddEventHandler('farm:giveItem', function(itensFarm)
---     local source = source
---     local user_id = vRP.getUserId(source)
 
---     if not user_id then
---         print("Erro: Usuário não encontrado!")
---         return
---     end
-
-    
---     for _, item in ipairs(itensFarm) do
---         local amount = math.random(item.minAmount, item.maxAmount)
---         vRP.giveInventoryItem(user_id, item.item, amount,true)
---         -- print("Entregue", amount, item.item, "para jogador", user_id)
---         -- TriggerClientEvent("Notify", source, "sucesso", "Você coletou " .. amount .. "x " .. item.item .. "!")
-
-
---     end
-
---     TriggerClientEvent("farm:success",source)
-
-   
-
--- end)
 
 
 RegisterServerEvent('farm:giveItem')

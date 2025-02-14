@@ -44,10 +44,10 @@ Citizen.CreateThread(function()
             for _, marker in ipairs(markers) do
                 local distance = Vdist(playerCoords.x, playerCoords.y, playerCoords.z, marker.coords.x, marker.coords.y, marker.coords.z)
                 
-                if distance < 5.0 then
+                if distance < 3.0 then
                     isNearMarker = true
-                    DrawMarker(21, marker.coords.x, marker.coords.y, marker.coords.z - 0.4,  0, 0, 0, 0, 180.0, 130.0, 0.7, 0.7, 0.8, 0, 255, 55, 180, 0, 0, 0, 1)
-                    
+                    DrawMarker(27, marker.coords.x, marker.coords.y, marker.coords.z - 0.95,  0, 0, 0, 0, 180.0, 130.0, 1.5, 1.5, 1.5, 55, 130, 55, 130, 0, 0, 0, 1)
+                    -- DrawMarker(27, marker.coords.x, marker.coords.y, marker.coords.z - 0.5 , 0, 0, 0, 0, 0, 1.5, 1.5, 1.5, 233, 255, 72, 180, 0, 0, 0, 1)
                     if distance < 1.5 then
                         ShowHelpText("Pressione ~INPUT_CONTEXT~ para iniciar o farm de " .. marker.name)
                         
@@ -324,3 +324,44 @@ AddEventHandler("farm:success",function ()
     TriggerEvent("Notify","sucesso","Você coletou o farm!")
     PlaySoundFrontend(-1, "PICK_UP", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
 end)
+
+
+
+
+-- NPC
+
+local npcs = {}
+
+Citizen.CreateThread(function()
+    while not Config do
+        Citizen.Wait(1000) -- Aguarda o carregamento do Config
+    end
+
+    for farmType, farmData in pairs(Config.farm.orgType) do
+        for _, org in ipairs(farmData.orgs) do
+            if org.npc then
+                local x, y, z, h = table.unpack(org.npc)
+                if x and y and z and h then
+                    createNPC(x, y, z, h)
+                    
+                end
+            end
+        end
+    end
+end)
+
+function createNPC(x, y, z, h)
+    local npcModel = GetHashKey("g_m_y_lost_03")
+
+    RequestModel(npcModel)
+    while not HasModelLoaded(npcModel) do
+        Citizen.Wait(10)
+    end
+
+    local npc = CreatePed(4, npcModel, x, y, z - 1.0, h, false, true)
+    SetEntityInvincible(npc, true)
+    SetBlockingOfNonTemporaryEvents(npc, true)
+    FreezeEntityPosition(npc, true)
+
+    table.insert(npcs, npc)
+end
