@@ -42,6 +42,8 @@ function showFarmMenu(routes,coords) {
     });
 
     menu.style.display = "block";
+   
+
 }
 
 

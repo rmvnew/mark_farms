@@ -46,8 +46,8 @@ Citizen.CreateThread(function()
                 
                 if distance < 3.0 then
                     isNearMarker = true
-                    DrawMarker(27, marker.coords.x, marker.coords.y, marker.coords.z - 0.95,  0, 0, 0, 0, 180.0, 130.0, 1.5, 1.5, 1.5, 55, 130, 55, 130, 0, 0, 0, 1)
-                    -- DrawMarker(27, marker.coords.x, marker.coords.y, marker.coords.z - 0.5 , 0, 0, 0, 0, 0, 1.5, 1.5, 1.5, 233, 255, 72, 180, 0, 0, 0, 1)
+                    DrawMarker(27, marker.coords.x, marker.coords.y, marker.coords.z - 0.95,  0, 0, 0, 0, 0, 130.0, 1.5, 1.5, 1.5, 190, 190, 0, 130, 0, 0, 0, 1)
+                    -- DrawMarker(27, marker.coords.x, marker.coords.y, marker.coords.z - 0.5 ,  0, 0, 0, 0, 180.0, 1.5, 1.5, 1.5, 233, 255, 72, 180, 0, 0, 0, 1)
                     if distance < 1.5 then
                         ShowHelpText("Pressione ~INPUT_CONTEXT~ para iniciar o farm de " .. marker.name)
                         
