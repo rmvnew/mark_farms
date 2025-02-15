@@ -144,61 +144,6 @@ RegisterNUICallback('selectRoute', function(data, cb)
     cb('ok')
 end)
 
--- RegisterNetEvent('farm:startCollect')
--- AddEventHandler('farm:startCollect', function(routeName, itensFarm)
---     if in_rota then return end
---     in_rota = true
---     hideMarkers = true -- 🔴 Esconde os markers
---     itemNumRoute = 1 -- 🔥 Sempre começa em 1 (evita erro)
---     itemRoute = routeName
---     textName = 'coleta'
-
---     local routeIndexed = Config.farm.routes[routeName]
---     if not routeIndexed or #routeIndexed == 0 then
---         print("❌ Erro: Rota não encontrada no Config ou está vazia!")
---         in_rota = false
---         hideMarkers = false -- Garante que os markers voltem
---         return
---     end
-
---     print("🛤️ Iniciando farm na rota:", routeName)
---     CriandoBlip(itemNumRoute, routeIndexed)
-
---     Citizen.CreateThread(function()
---         while in_rota do
---             Citizen.Wait(0)
---             local ped = PlayerPedId()
---             local pedCoords = GetEntityCoords(ped)
-
---             if itemNumRoute < 1 then itemNumRoute = 1 end -- 🔥 Se for menor que 1, ajusta
-
---             if itemNumRoute > #routeIndexed then
---                 itemNumRoute = 1 -- 🔄 Reseta para o início para farm infinito
---             end
-
---             local indexedCoords = routeIndexed[itemNumRoute] 
---             if indexedCoords then -- 🛑 Garante que o índice existe antes de usar
---                 local distance = #(pedCoords - vector3(indexedCoords.x, indexedCoords.y, indexedCoords.z))
-
---                 if distance <= 150.0 then
---                     DrawMarker(22, indexedCoords.x, indexedCoords.y, indexedCoords.z + 1, 0, 0, 0, 0, 180.0, 130.0, 4.5, 4.5, 1.2, 0, 255, 55, 180, 1, 0, 0, 1)
-
---                     if distance <= 4.0 then
---                         TriggerServerEvent('farm:giveItem', itensFarm)
---                         itemNumRoute = itemNumRoute + 1 -- Avança para o próximo ponto
-
---                         RemoveBlip(blips)
---                         CriandoBlip(itemNumRoute, routeIndexed)
---                     end
---                 end
---             else
---                 print("⚠️ Erro: indexedCoords é nil! itemNumRoute:", itemNumRoute)
---                 in_rota = false -- Cancela a rota se houver erro
---                 hideMarkers = false -- Exibe os markers novamente
---             end
---         end
---     end)
--- end)
 
 
 RegisterNetEvent('farm:startCollect')
