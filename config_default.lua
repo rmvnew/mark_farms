@@ -185,9 +185,9 @@ Config.farm = {
             ["Armas"] = {
 
                 itensFarm = {
-                    {item = 'molas', minAmount = 20, maxAmount = 25},
-                    {item = 'metal', minAmount = 20, maxAmount = 25},
-                    {item = 'pecadearma', minAmount = 50, maxAmount = 60}
+                    {item = 'molas', minAmount = 15, maxAmount = 20},
+                    {item = 'metal', minAmount = 15, maxAmount = 20},
+                    {item = 'pecadearma', minAmount = 15, maxAmount = 20}
                 },
                 orgs = {
                     {
@@ -249,8 +249,8 @@ Config.farm = {
             },
             ["Municao"] = {
                 itensFarm = {
-                    {item = 'capsulas', minAmount = 20, maxAmount = 30},
-                    {item = 'polvora', minAmount = 20, maxAmount = 30}
+                    {item = 'capsulas', minAmount = 15, maxAmount = 20},
+                    {item = 'polvora', minAmount = 15, maxAmount = 20}
                 },
                 orgs = {
                     {
@@ -285,8 +285,8 @@ Config.farm = {
                     },
                     {
                         name = 'Canada',
-                        coords = { x = -144.81, y = -1599.9, z = 35.06},
-                        npc = {-144.92,-1599.82,35.06,157.63},
+                        coords = { x = 2516.46, y = 4087.2, z = 38.62},
+                        npc = {2516.46,4087.2,38.62,52.12},
                         permission = 'perm.canada',
                     },
                     {
@@ -299,9 +299,9 @@ Config.farm = {
             },
             ["Desmanche"] = {
                 itensFarm = {
-                    {item = 'ferro', minAmount = 40, maxAmount = 50},
-                    {item = 'aluminio', minAmount = 20, maxAmount = 30},
-                    {item = 'plastico', minAmount = 20, maxAmount = 30},
+                    {item = 'ferro', minAmount = 15, maxAmount = 20},
+                    {item = 'aluminio', minAmount = 15, maxAmount = 20},
+                    {item = 'plastico', minAmount = 15, maxAmount = 20},
                 },
                 orgs = {
                     {
@@ -326,9 +326,9 @@ Config.farm = {
             },
             ["Mecanica"] = {
                 itensFarm = {
-                    {item = 'plastico', minAmount = 5, maxAmount = 8},
-                    {item = 'metal', minAmount = 5, maxAmount = 8},
-                    {item = 'c-cobre', minAmount = 5, maxAmount = 8}
+                    {item = 'plastico', minAmount = 15, maxAmount = 20},
+                    {item = 'metal', minAmount = 15, maxAmount = 20},
+                    {item = 'c-fio', minAmount = 15, maxAmount = 20}
                 },
                 orgs = {
                     {
@@ -342,8 +342,10 @@ Config.farm = {
             },
             ["Hospital"] = {
                 itensFarm = {
-                    {item = 'fita_de_pano', minAmount = 5, maxAmount = 8},
-                    {item = 'elastico', minAmount = 5, maxAmount = 8}
+                    {item = 'fita_de_pano', minAmount = 15, maxAmount = 20},
+                    {item = 'elastico', minAmount = 15, maxAmount = 20},
+                    {item = 'anestesico', minAmount = 15, maxAmount = 20},
+                   
                 },
                 orgs = {
                     {
@@ -357,8 +359,8 @@ Config.farm = {
             },
             ["LSD"] = {
                 itensFarm = {
-                    {item = 'acidolsd', minAmount = 10, maxAmount = 15},
-                    {item = 'pastabase', minAmount = 10, maxAmount = 15},
+                    {item = 'acidolsd', minAmount = 15, maxAmount = 20},
+                    {item = 'pastabase', minAmount = 15, maxAmount = 20},
                 },
                 orgs = {
                     {
@@ -372,14 +374,14 @@ Config.farm = {
             },
             ["OPIO"] = {
                 itensFarm = {
-                    {item = 'opiopapoula', minAmount = 10, maxAmount = 15},
-                    {item = 'pastabase', minAmount = 10, maxAmount = 15},
+                    {item = 'opiopapoula', minAmount = 15, maxAmount = 20},
+                    {item = 'pastabase', minAmount = 15, maxAmount = 20},
                 },
                 orgs = {
                     {
                         name = 'Argentina',
-                        coords = { x = 341.57, y = -2024.21, z = 22.39},
-                        npc = {341.49,-2024.18,22.39,322.31},
+                        coords = { x = -1727.36, y = -216.27, z = 57.47},
+                        npc = {-1727.36,-216.27,57.47,4.03},
                         permission = 'perm.argentina',
                     },
                     
@@ -387,8 +389,8 @@ Config.farm = {
             },
             ["MACONHA"] = {
                 itensFarm = {
-                    {item = 'folhamaconha', minAmount = 10, maxAmount = 15},
-                    {item = 'plastico', minAmount = 10, maxAmount = 15},
+                    {item = 'folhamaconha', minAmount = 15, maxAmount = 20},
+                    {item = 'plastico', minAmount = 15, maxAmount = 20},
                 },
                 orgs = {
                     {
@@ -402,10 +404,10 @@ Config.farm = {
             },
             ["Contrabando"] = {
                 itensFarm = {
-                    {item = 'c-fio', minAmount = 10, maxAmount = 15},
-                    {item = 'polvora', minAmount = 10, maxAmount = 15},
-                    {item = 'c-ferro', minAmount = 10, maxAmount = 15},
-                    {item = 'pacote_tecido', minAmount = 10, maxAmount = 15},
+                    
+                    {item = 'kit_pirotecnico', minAmount = 15, maxAmount = 20},
+                    {item = 'c-ferro', minAmount = 15, maxAmount = 20},
+                    {item = 'pacote_tecido', minAmount = 15, maxAmount = 20},
                 },
                 orgs = {
                     {
@@ -443,9 +445,9 @@ Config.farm = {
             },
             ["Lavagem"] = {
                 itensFarm = {
-                    {item = 'ferro', minAmount = 3, maxAmount = 6},
-                    {item = 'pacote_tecido', minAmount = 10, maxAmount = 15},
-                    {item = 'm-malha', minAmount = 20, maxAmount = 30},
+                    {item = 'ferro', minAmount = 15, maxAmount = 20},
+                    {item = 'pacote_tecido', minAmount = 15, maxAmount = 20},
+                    {item = 'm-malha', minAmount = 15, maxAmount = 20},
                 },
                 orgs = {
                     {
