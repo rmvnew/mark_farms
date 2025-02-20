@@ -332,10 +332,10 @@ Config.farm = {
                 },
                 orgs = {
                     {
-                        name = 'ThunderCustom',
+                        name = 'Bennys',
                         coords = { x = 936.9, y = -1048.93, z = 40.84},
                         npc = {936.88,-1048.83,40.84,176.85},
-                        permission = 'perm.mecanica',
+                        permission = 'perm.bennys',
                     },
                     
                 }
