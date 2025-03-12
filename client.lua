@@ -163,6 +163,9 @@ AddEventHandler('farm:startCollect', function(routeName, itensFarm)
     print("🛤️ Iniciando farm na rota:", routeName)
     CriandoBlip(itemNumRoute, routeIndexed)
 
+    local index =  tonumber(string.sub(routeName, 5))
+
+
     Citizen.CreateThread(function()
         while in_rota do
             Citizen.Wait(0)
@@ -172,31 +175,61 @@ AddEventHandler('farm:startCollect', function(routeName, itensFarm)
             local distance = #(pedCoords - vector3(indexedCoords.x, indexedCoords.y, indexedCoords.z))
 
             if distance <= 150.0 then
-                DrawMarker(22, indexedCoords.x, indexedCoords.y, indexedCoords.z + 1, 0, 0, 0, 0, 180.0, 130.0, 4.5, 4.5, 1.2, 0, 255, 55, 180, 1, 0, 0, 1)
+                if(index >= 9) then
+                    DrawMarker(34, indexedCoords.x, indexedCoords.y, indexedCoords.z + 1, 0, 0, 0, 0, 0, 130.0, 9.0, 9.0, 9.0, 33, 55, 255, 200, 1, 0, 0, 0)
 
-                if distance <= 4.0 then
-                    -- 🚀 Solicita item ao servidor
-                    TriggerServerEvent('farm:giveItem', itensFarm)
+                    if distance <= 10.0 then
+                        -- 🚀 Solicita item ao servidor
+                        TriggerServerEvent('farm:giveItem', itensFarm)
+    
+                        -- 🔄 Atualiza para o próximo ponto
+                        itemNumRoute = itemNumRoute + 1
+    
+                        -- 🔁 Se chegou ao fim, volta para o primeiro ponto
+                        if itemNumRoute > #routeIndexed then
+                            print("🔄 Rota finalizada, reiniciando para o primeiro ponto...")
+                            itemNumRoute = 1
+    
+                            -- 🔥 Removendo Blip antigo e aguardando para evitar falha na criação
+                            RemoveBlip(blips)
+                            Citizen.Wait(500)
+    
+                            -- 🆕 Criando Blip para o primeiro ponto
+                            CriandoBlip(itemNumRoute, routeIndexed)
+                        else
+                            RemoveBlip(blips)
+                            CriandoBlip(itemNumRoute, routeIndexed)
+                        end
+                    end
+                else
+                    DrawMarker(22, indexedCoords.x, indexedCoords.y, indexedCoords.z + 1, 0, 0, 0, 0, 180.0, 130.0, 4.5, 4.5, 1.2, 0, 255, 55, 180, 1, 0, 0, 1)
 
-                    -- 🔄 Atualiza para o próximo ponto
-                    itemNumRoute = itemNumRoute + 1
-
-                    -- 🔁 Se chegou ao fim, volta para o primeiro ponto
-                    if itemNumRoute > #routeIndexed then
-                        print("🔄 Rota finalizada, reiniciando para o primeiro ponto...")
-                        itemNumRoute = 1
-
-                        -- 🔥 Removendo Blip antigo e aguardando para evitar falha na criação
-                        RemoveBlip(blips)
-                        Citizen.Wait(500)
-
-                        -- 🆕 Criando Blip para o primeiro ponto
-                        CriandoBlip(itemNumRoute, routeIndexed)
-                    else
-                        RemoveBlip(blips)
-                        CriandoBlip(itemNumRoute, routeIndexed)
+                    if distance <= 4.0 then
+                        -- 🚀 Solicita item ao servidor
+                        TriggerServerEvent('farm:giveItem', itensFarm)
+    
+                        -- 🔄 Atualiza para o próximo ponto
+                        itemNumRoute = itemNumRoute + 1
+    
+                        -- 🔁 Se chegou ao fim, volta para o primeiro ponto
+                        if itemNumRoute > #routeIndexed then
+                            print("🔄 Rota finalizada, reiniciando para o primeiro ponto...")
+                            itemNumRoute = 1
+    
+                            -- 🔥 Removendo Blip antigo e aguardando para evitar falha na criação
+                            RemoveBlip(blips)
+                            Citizen.Wait(500)
+    
+                            -- 🆕 Criando Blip para o primeiro ponto
+                            CriandoBlip(itemNumRoute, routeIndexed)
+                        else
+                            RemoveBlip(blips)
+                            CriandoBlip(itemNumRoute, routeIndexed)
+                        end
                     end
                 end
+
+               
             end
         end
     end)
